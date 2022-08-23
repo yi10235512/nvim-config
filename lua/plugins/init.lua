@@ -33,4 +33,9 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'onsails/lspkind.nvim'
+
+  use {'lewis6991/gitsigns.nvim',
+    config = "require('gitsigns-config')"
+  }
+
 end)

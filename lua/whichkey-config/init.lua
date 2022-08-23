@@ -37,7 +37,14 @@ local mappings = {
 --     e = { '<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics" },
 --     n = { '<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic" },
 --     N = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic" }
-   },
+  },
+  g = {
+    name = "Git Signs",
+    d = {":Gitsigns preview_hunk<CR>", "See diff"},
+    D = {":Gitsigns diffthis<CR>", "Show file diff"},
+    R = {":Gitsigns reset_hunk<CR>", "Rollback Hunk"},
+    
+  },
 }
 
 local opts = {prefix = "<leader>"}
