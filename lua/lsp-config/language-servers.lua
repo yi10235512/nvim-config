@@ -18,9 +18,9 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.clangd.setup{
   cmd = { 'clangd',
 		'--background-index',
-		'--inlay-hints',
-		'--clang-tidy',
-		'--compile-commands-dir=build', }
+--  "--enable-config",
+    "-log=verbose"
+  }
 }
 
 -- DiagnosticSign styling
