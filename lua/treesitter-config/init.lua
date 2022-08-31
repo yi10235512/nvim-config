@@ -6,7 +6,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
             spacing = 5,
             severity_limit = 'Warning',
         },
-        update_in_insert = true,
+        -- update_in_insert = true,
     }
 )
 
