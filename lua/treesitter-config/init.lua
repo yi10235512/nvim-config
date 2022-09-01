@@ -9,10 +9,16 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
         -- update_in_insert = true,
     }
 )
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    {
+        border = "rounded",
+    }
+)
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "html", "lua", "javascript", "cpp" },
+  ensure_installed = { "html", "lua", "javascript", "cpp", "c", "python" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

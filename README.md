@@ -6,7 +6,7 @@ My Neovim configuration
 - iTerm2 with nerdfont (for display devicons)
 
 ## Quick Start
-1. Copy `lua/` and `init.lua` to `~/.config/nvim/`
+1. Copy `lua/` and `init.lua` to `~/.config/nvim/` (or Clone this repository and save as `~/.config/nvim/` directly) 
 2. Install [packer.nvim](https://github.com/wbthomason/packer.nvim#quickstart)
 3. in Neovim, type `:PackerInstall` 
 
