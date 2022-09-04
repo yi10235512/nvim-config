@@ -1,4 +1,5 @@
 vim.cmd('filetype plugin indent on')
+require('options/my_function')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.pumheight = 10
@@ -36,6 +37,6 @@ vim.bo.expandtab = true
 
 -- Load the colorscheme
 vim.g.nord_borders = true
-vim.g.nord_italic = false 
+vim.g.nord_italic = false
 require('nord').set()
 

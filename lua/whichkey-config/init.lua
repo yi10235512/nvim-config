@@ -6,7 +6,10 @@ wk.setup {
     registers = false,
     spelling = { enabled = false, suggestions = 20 },
     presets = { operators = false, }
-  }
+  },
+  window = {
+    border = "single", -- none, single, double, shadow
+  },
 }
 
 local mappings = {
@@ -31,8 +34,12 @@ local mappings = {
     d = {":Gitsigns preview_hunk<CR>", "See diff"},
     D = {":Gitsigns diffthis<CR>", "Show file diff"},
     R = {":Gitsigns reset_hunk<CR>", "Rollback Hunk"},
-    
   },
+  ["1"] = {
+    name = "Session Management",
+    s = { "<CMD>lua MySessionSave()<CR>", "Save the Session"},
+    l = { "<CMD>lua MySessionLoad()<CR>", "Load the Session"}
+  }
 }
 
 local opts = {prefix = "<leader>"}

@@ -12,8 +12,7 @@ require("nvim-tree").setup {
     },
   },
   filters = {
-    custom = { "Icon" },
-    dotfiles = true, 
+    custom = { "Icon", "^.git$" },
     exclude = { ".clangd", "/bin", "/build" }
   },
   trash = {
