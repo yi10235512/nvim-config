@@ -22,13 +22,13 @@ Check Neovim version is v0.5.0+ and run `:PackerInstall` again.
 
 ## Language Server Protocol(LSP)
 If language server is not installed, there will show the warning when opening the file.  
-E.g. use nvim to open a `*.py` file will show a message like "_Spawning language server with cmd: pyright failed. The language server is either not installed, missing from PATH, or not executable._"
+E.g. use nvim to open a `*.py` file will show a message like "_Spawning language server with cmd: `pyright-langserver` failed. The language server is either not installed, missing from PATH, or not executable._"
 
 Following [**nvim-lspconfig**'s Quickstart](https://github.com/neovim/nvim-lspconfig#quickstart) can install ___pyright___ language server. After installation, open a python file and type `:LspInfo` or `<space> l i` will show the LSP information (should see "_1 client(s) attached to this buffer_" and the client is ___pyright___)
 
 For more details about other language servers supported by **nvim-lspconfig** plugin, see [server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
 
-In [language-servers.lua](lua/lsp-config/language-servesrs.lua), five language servers were configured: ___cssls___, ___tsserver___, ___pyright___, ___clangd___, ___html___.  
+In [language-servers.lua](lua/lsp-config/language-servesrs.lua), six language servers were configured: ___cssls___, ___tsserver___, ___pyright___, ___clangd___, ___html___, ___sumneko_lua___.  
 Uncomment/Delete unwanted language servers to get rid of warning.
 
 ## Plugins 
