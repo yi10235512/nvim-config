@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'kyazdani42/nvim-web-devicons'}
   }
   use {'akinsho/bufferline.nvim', tag = "v1.*", requires = 'kyazdani42/nvim-web-devicons'}
   use {
