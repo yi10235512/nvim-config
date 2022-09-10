@@ -18,7 +18,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "html", "lua", "javascript", "cpp", "c", "python" },
+  ensure_installed = { "html", "lua", "javascript", "cpp", "c", "python", "typescript" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -33,5 +33,11 @@ require'nvim-treesitter.configs'.setup {
   },
   autotag = {
     enable = true,
+  },
+  autopairs = {
+    enable = true,
+  },
+  indent = {
+    disable = {"typescript"},
   }
 }

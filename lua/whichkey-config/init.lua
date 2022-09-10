@@ -18,7 +18,7 @@ local mappings = {
   x = {":bdelete<CR>", "Close"},
   f = {":Telescope find_files<CR>", "Find Files"},
   F = {":Telescope live_grep<CR>", "Live Grep"},
-  l = {
+  L = {
      name = "LSP",
      i = { ":LspInfo<CR>", "Connected Language Servers" },
      K = { "<CMD>lua vim.lsp.buf.hover()<CR>", "Document"},
@@ -44,3 +44,4 @@ local mappings = {
 
 local opts = {prefix = "<leader>"}
 wk.register(mappings, opts)
+
