@@ -13,35 +13,35 @@ wk.setup {
 }
 
 local mappings = {
-  q = {":q<CR>", "Quit"},
-  w = {":w<CR>", "Save"},
-  x = {":bdelete<CR>", "Close"},
-  f = {":Telescope find_files<CR>", "Find Files"},
-  F = {":Telescope live_grep<CR>", "Live Grep"},
+  q = { ":q<CR>", "Quit" },
+  w = { ":w<CR>", "Save" },
+  x = { ":bdelete<CR>", "Close" },
+  f = { ":Telescope find_files<CR>", "Find Files" },
+  F = { ":Telescope live_grep<CR>", "Live Grep" },
   L = {
-     name = "LSP",
-     i = { ":LspInfo<CR>", "Connected Language Servers" },
-     K = { "<CMD>lua vim.lsp.buf.hover()<CR>", "Document"},
-     R = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename"},
-     T = { "<CMD>lua vim.lsp.buf.type_definition()<CR>", "Type Definition"},
-     d = { '<CMD>lua vim.lsp.buf.definition()<CR>', "Go To Definition" },
-     D = { '<CMD>lua vim.lsp.buf.declaration()<CR>', "Go To Declaration" },
-     r = { '<CMD>lua vim.lsp.buf.references()<CR>', "References" },
-     I = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "Implementation"},
+    name = "LSP",
+    i = { ":LspInfo<CR>", "Connected Language Servers" },
+    K = { "<CMD>lua vim.lsp.buf.hover()<CR>", "Document" },
+    R = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
+    T = { "<CMD>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
+    d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "Go To Definition" },
+    D = { "<CMD>lua vim.lsp.buf.declaration()<CR>", "Go To Declaration" },
+    r = { "<CMD>lua vim.lsp.buf.references()<CR>", "References" },
+    I = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
+    F = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "Formatting" }
   },
-  g = {
+  G = {
     name = "Git Signs",
-    d = {":Gitsigns preview_hunk<CR>", "See diff"},
-    D = {":Gitsigns diffthis<CR>", "Show file diff"},
-    R = {":Gitsigns reset_hunk<CR>", "Rollback Hunk"},
+    d = { ":Gitsigns preview_hunk<CR>", "See diff" },
+    D = { ":Gitsigns diffthis<CR>", "Show file diff" },
+    R = { ":Gitsigns reset_hunk<CR>", "Rollback Hunk" },
   },
   ["1"] = {
     name = "Session Management",
-    s = { "<CMD>lua MySessionSave()<CR>", "Save the Session"},
-    l = { "<CMD>lua MySessionLoad()<CR>", "Load the Session"}
+    s = { "<CMD>lua MySessionSave()<CR>", "Save the Session" },
+    l = { "<CMD>lua MySessionLoad()<CR>", "Load the Session" }
   }
 }
 
-local opts = {prefix = "<leader>"}
+local opts = { prefix = "<leader>" }
 wk.register(mappings, opts)
-

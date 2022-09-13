@@ -1,4 +1,4 @@
-vim.g.completeopt="menu,menuone,noselect,noinsert"
+vim.g.completeopt = "menu,menuone,noselect,noinsert"
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -8,8 +8,8 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 -- Setup nvim-cmp.
-local cmp = require'cmp'
-local lspkind = require'lspkind'
+local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 
 cmp.setup({
   snippet = {
@@ -59,7 +59,7 @@ cmp.setup({
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-   }, {
+  }, {
     { name = 'buffer' },
   }),
   formatting = {
@@ -69,4 +69,3 @@ cmp.setup({
     })
   }
 })
-

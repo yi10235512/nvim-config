@@ -13,3 +13,4 @@ require('lsp-config')
 require('nvim-comment-config')
 require('dashboard-config')
 vim.cmd('colorscheme nord')
+

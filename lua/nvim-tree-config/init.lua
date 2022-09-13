@@ -1,5 +1,5 @@
 require("nvim-tree").setup {
---  open_on_setup = true,
+  --  open_on_setup = true,
   hijack_cursor = true,
   view = {
     adaptive_size = true,
@@ -20,7 +20,7 @@ require("nvim-tree").setup {
     require_confirm = true,
   },
   renderer = {
---  highlight_git = true,
+    --  highlight_git = true,
     indent_markers = {
       enable = true,
     },
@@ -40,5 +40,3 @@ require("nvim-tree").setup {
     }
   },
 }
-
-

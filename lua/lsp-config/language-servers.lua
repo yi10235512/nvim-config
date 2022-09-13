@@ -1,30 +1,34 @@
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- html, css lsp
-require'lspconfig'.html.setup {
+require 'lspconfig'.html.setup {
   capabilities = capabilities
 }
 
-require'lspconfig'.cssls.setup{
+require 'lspconfig'.cssls.setup {
   capabilities = capabilities
 }
 -- typescript, javascript lsp
-require'lspconfig'.tsserver.setup{}
+require 'lspconfig'.tsserver.setup {
+  capabilities = capabilities
+}
 
 -- python lsp
-require'lspconfig'.pyright.setup{}
+require 'lspconfig'.pyright.setup {
+  capabilities = capabilities
+}
 
 -- C, C++ lsp (clang)
-require'lspconfig'.clangd.setup{
+require 'lspconfig'.clangd.setup {
   cmd = { 'clangd',
-		'--background-index',
---  "--enable-config",
+    '--background-index',
+    --  "--enable-config",
     "-log=verbose"
   }
 }
 
 -- lua lsp
-require'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.sumneko_lua.setup {
   settings = {
     Lua = {
       runtime = {
@@ -33,7 +37,7 @@ require'lspconfig'.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
