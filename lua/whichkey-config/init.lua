@@ -1,5 +1,4 @@
 local wk = require("which-key")
-
 wk.setup {
   plugins = {
     marks = false,
@@ -18,6 +17,7 @@ local mappings = {
   x = { ":bdelete<CR>", "Close" },
   f = { ":Telescope find_files<CR>", "Find Files" },
   F = { ":Telescope live_grep<CR>", "Live Grep" },
+  b = { ":lua vim.lsp.buf.formatting()<CR>", "Formatting"},
   L = {
     name = "LSP",
     i = { ":LspInfo<CR>", "Connected Language Servers" },
@@ -38,8 +38,12 @@ local mappings = {
   },
   ["1"] = {
     name = "Session Management",
-    s = { "<CMD>lua MySessionSave()<CR>", "Save the Session" },
-    l = { "<CMD>lua MySessionLoad()<CR>", "Load the Session" }
+    s = { "<CMD>lua saveSession()<CR>", "Save the Session" },
+    l = { "<CMD>lua loadSession()<CR>", "Load the Session" }
+  },
+  ["2"] = {
+    name = "Snippet",
+    n = { ":VsnipOpen<CR>", "Open vsnip"}
   }
 }
 

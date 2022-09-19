@@ -1,5 +1,4 @@
 vim.cmd('filetype plugin indent on')
-require('options/my_function')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
 vim.o.pumheight = 10
@@ -19,7 +18,7 @@ vim.o.clipboard = "unnamedplus"
 vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.scrolloff = 3
-vim.o.sidescrolloff = 5
+vim.o.sidescrolloff = 10
 vim.o.mouse = "a"
 vim.wo.wrap = false
 vim.wo.number = true

@@ -12,5 +12,6 @@ require('telescope-config')
 require('lsp-config')
 require('nvim-comment-config')
 require('dashboard-config')
+require('mymodule')
 vim.cmd('colorscheme nord')
 
