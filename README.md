@@ -36,7 +36,7 @@ Uncomment/Delete unwanted language servers to get rid of warning.
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) : for syntax higelight
 - [lualin.nvim](https://github.com/nvim-lualine/lualine.nvim) : status line
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) : buffer line 
-- [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) : file explorer (`<space> e` to toggle, `A` create file, `D` delete file, `r` for rename file)
+- [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) : file explorer (`<space> e` to toggle, `A` create file, `D` delete file, `r` for rename file)
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) : used for autoclose and autorename html tag 
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs) : used for autopair
 - [which-key](https://github.com/folke/which-key.nvim) : definded and displayed key bindings 
