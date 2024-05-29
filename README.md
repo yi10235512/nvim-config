@@ -28,7 +28,7 @@ Following [**nvim-lspconfig**'s Quickstart](https://github.com/neovim/nvim-lspco
 
 For more details about other language servers supported by **nvim-lspconfig** plugin, see [server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
 
-In [language-servers.lua](lua/lsp-config/language-servesrs.lua), six language servers were configured: ___cssls___, ___tsserver___, ___pyright___, ___clangd___, ___html___, ___sumneko_lua___.  
+In [language-servers.lua](lua/lsp-config/language-servesrs.lua), six language servers were configured: ___cssls___, ___tsserver___, ___pyright___, ___clangd___, ___html___, ___lua_ls___.  
 Uncomment/Delete unwanted language servers to get rid of warning.
 
 ## Plugins 
@@ -50,4 +50,4 @@ Uncomment/Delete unwanted language servers to get rid of warning.
 - [lspkind](https://github.com/onsails/lspkind.nvim) : beautify the **nvim-cmp**
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) : signs for git (`<space> g D` and `<space> g d` can see diff, `<space> g R` can rollback)
 - [nvim-comment](https://github.com/terrortylor/nvim-comment) : easily comment depends on filetype (`gcc` for comment line)
-- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) : used for customizing fancy start screen of Neovim 
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) : used for customizing fancy start screen of Neovim 

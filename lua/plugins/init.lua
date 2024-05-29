@@ -5,9 +5,9 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = { 'nvim-tree/nvim-web-devicons' }
   }
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' }
@@ -36,5 +36,5 @@ return require('packer').startup(function(use)
   }
 
   use { "terrortylor/nvim-comment" }
-  use { 'glepnir/dashboard-nvim' }
+  use { 'nvimdev/dashboard-nvim' }
 end)
