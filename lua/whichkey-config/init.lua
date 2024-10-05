@@ -28,7 +28,7 @@ local mappings = {
     D = { "<CMD>lua vim.lsp.buf.declaration()<CR>", "Go To Declaration" },
     r = { "<CMD>lua vim.lsp.buf.references()<CR>", "References" },
     I = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
-    F = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "Formatting" }
+    F = { "<CMD>lua vim.lsp.buf.format()<CR>", "Formatting" }
   },
   G = {
     name = "Git Signs",

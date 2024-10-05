@@ -2,9 +2,9 @@ local db = require('dashboard')
 db.setup({
   theme = 'doom',
   hide = {
-    statusline,
-    tabline,
-    winbar
+    statusline = true,
+    tabline = true,
+    winbar = true,
   },
   config = {
     header = {

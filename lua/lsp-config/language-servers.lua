@@ -9,7 +9,7 @@ require 'lspconfig'.cssls.setup {
   capabilities = capabilities
 }
 -- typescript, javascript lsp
-require 'lspconfig'.tsserver.setup {
+require 'lspconfig'.ts_ls.setup {
   capabilities = capabilities
 }
 

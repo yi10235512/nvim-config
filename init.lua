@@ -14,4 +14,5 @@ require('nvim-comment-config')
 require('dashboard-config')
 require('mymodule')
 vim.cmd('colorscheme nord')
+vim.cmd('autocmd FileType cpp setlocal commentstring=//%s')
 
