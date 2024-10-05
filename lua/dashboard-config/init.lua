@@ -32,8 +32,8 @@ db.setup({
       '',
     },
     center = {
-      { icon = '  ', desc = 'Load Sessions           ', action = ':lua loadSession()' },
-      { icon = '  ', desc = 'Recently Opened Files   ', action = 'Telescope oldfiles' },
+      { icon = '  ', desc = 'Load Sessions           ', action = ':lua loadSession()' },
+      { icon = '󰆏  ', desc = 'Recently Opened Files   ', action = 'Telescope oldfiles' },
       { icon = '  ', desc = 'Find File               ', action = 'Telescope find_files find_command=rg,--files' },
       { icon = '  ', desc = 'Find Word               ', action = 'Telescope live_grep' },
       { icon = '  ', desc = 'Edit Neovim             ', action = 'edit ~/.config/nvim' },
