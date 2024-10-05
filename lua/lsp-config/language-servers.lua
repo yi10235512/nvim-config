@@ -1,5 +1,20 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- mason
+require("mason").setup {
+  ui = {
+    border = "single",
+    height = 0.8
+  }
+}
+
+require("mason-lspconfig").setup {
+  ensure_installed = { 'volar' }
+}
+
+local mason_registry = require('mason-registry')
+local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+
 -- html, css lsp
 require 'lspconfig'.html.setup {
   capabilities = capabilities
@@ -10,8 +25,33 @@ require 'lspconfig'.cssls.setup {
 }
 -- typescript, javascript lsp
 require 'lspconfig'.ts_ls.setup {
-  capabilities = capabilities
+  -- Initial options for the TypeScript language server
+  init_options = {
+    plugins = {
+      {
+        -- Name of the TypeScript plugin for Vue
+        name = '@vue/typescript-plugin',
+
+        -- Location of the Vue language server module (path defined in step 1)
+        location = vue_language_server_path,
+
+        -- Specify the languages the plugin applies to (in this case, Vue files)
+        languages = { 'vue' },
+      },
+    },
+  },
+
+  -- Specify the file types that will trigger the TypeScript language server
+  filetypes = {
+    'typescript', -- TypeScript files (.ts)
+    'javascript', -- JavaScript files (.js)
+    'javascriptreact', -- React files with JavaScript (.jsx)
+    'typescriptreact', -- React files with TypeScript (.tsx)
+    'vue' -- Vue.js single-file components (.vue)
+  },
 }
+
+require'lspconfig'.volar.setup{}
 
 -- python lsp
 require 'lspconfig'.pyright.setup {
@@ -22,7 +62,7 @@ require 'lspconfig'.pyright.setup {
 require 'lspconfig'.clangd.setup {
   cmd = { 'clangd',
     '--background-index',
-     "--enable-config",
+    "--enable-config",
     "-log=verbose"
   }
 }

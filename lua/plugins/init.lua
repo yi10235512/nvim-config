@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
   }
   use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = "require('toggleterm-config')" }
 
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
