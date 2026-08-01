@@ -2,23 +2,23 @@
 My Neovim configuration
 
 ## Requirements
-- Neovim v0.5.0+ (for use packer)
+- Neovim v0.10.0+ (for use lazy.nvim and built-in `gc` commenting)
 - iTerm2 with nerdfont (for display devicons)
 
 ## Quick Start
-1. Copy `lua/` and `init.lua` to `~/.config/nvim/` (or Clone this repository and save as `~/.config/nvim/` directly) 
-2. Install [packer.nvim](https://github.com/wbthomason/packer.nvim#quickstart)
-3. in Neovim, type `:PackerInstall` 
+1. Copy `lua/` and `init.lua` to `~/.config/nvim/` (or Clone this repository and save as `~/.config/nvim/` directly)
+2. Start Neovim — [lazy.nvim](https://github.com/folke/lazy.nvim) bootstraps itself and installs every plugin on the first launch
+3. Use `:Lazy` to check status, `:Lazy sync` to install/update/clean, `:Lazy restore` to pin everything back to `lazy-lock.json`
 
-For Ubuntu users, if getting the message "_Not an editor command: PackerInstall_", check the Neovim version and update it to v0.5.0+.    
-If Neovim installed through APT cannot get the higher version. Remove Neovim first, then add [Neovim PPA](https://launchpad.net/~neovim-ppa/+archive/ubuntu/stable):
+`lazy-lock.json` is committed, so a fresh clone reproduces the exact plugin versions. Run `:Lazy sync` and commit the updated lockfile whenever you bump plugins.
+
+For Ubuntu users, if Neovim installed through APT cannot get a high enough version, remove it first, then add the [Neovim PPA](https://launchpad.net/~neovim-ppa/+archive/ubuntu/stable):
 ```
 sudo apt-get remove neovim
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 ```
-Check Neovim version is v0.5.0+ and run `:PackerInstall` again.
 
 ## Language Server Protocol(LSP)
 If language server is not installed, there will show the warning when opening the file.  

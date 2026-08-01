@@ -1,42 +1,58 @@
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  use 'shaunsingh/nord.nvim'
-  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
-  use {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out,                            "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  'shaunsingh/nord.nvim',
+
+  { 'nvim-treesitter/nvim-treesitter', branch = 'master', build = ":TSUpdate" },
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
-  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
-  use {
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+  { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+  {
     'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
-  use { 'windwp/nvim-ts-autotag' }
-  use { 'windwp/nvim-autopairs' }
-  use { 'folke/which-key.nvim' }
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = "require('toggleterm-config')" }
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+  'windwp/nvim-ts-autotag',
+  'windwp/nvim-autopairs',
+  'folke/which-key.nvim',
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  { "akinsho/toggleterm.nvim", version = '^2.0.0', config = function() require('toggleterm-config') end },
 
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'onsails/lspkind.nvim'
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/vim-vsnip',
+  'onsails/lspkind.nvim',
 
-  use { 'lewis6991/gitsigns.nvim',
-    config = "require('gitsigns-config')"
-  }
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function() require('gitsigns-config') end,
+  },
 
-  use { "terrortylor/nvim-comment" }
-  use { 'nvimdev/dashboard-nvim' }
-end)
+  'nvimdev/dashboard-nvim',
+})

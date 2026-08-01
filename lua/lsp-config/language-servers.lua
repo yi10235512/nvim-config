@@ -9,7 +9,8 @@ require("mason").setup {
 }
 
 require("mason-lspconfig").setup {
-  ensure_installed = { 'volar' }
+  ensure_installed = { 'volar', 'ts_ls' },
+  automatic_enable = false,
 }
 
 local mason_registry = require('mason-registry')
