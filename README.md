@@ -49,5 +49,5 @@ Uncomment/Delete unwanted language servers to get rid of warning.
 - [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) : create code snippets
 - [lspkind](https://github.com/onsails/lspkind.nvim) : beautify the **nvim-cmp**
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) : signs for git (`<space> g D` and `<space> g d` can see diff, `<space> g R` can rollback)
-- [nvim-comment](https://github.com/terrortylor/nvim-comment) : easily comment depends on filetype (`gcc` for comment line)
 - [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) : used for customizing fancy start screen of Neovim 
+- [claudecode.nvim](https://github.com/coder/claudecode.nvim) : Claude Code IDE integration (keybindings prefix is `<space> a`, see below)

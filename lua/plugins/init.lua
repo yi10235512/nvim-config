@@ -55,4 +55,5 @@ require("lazy").setup({
   },
 
   'nvimdev/dashboard-nvim',
+  'coder/claudecode.nvim',
 })
