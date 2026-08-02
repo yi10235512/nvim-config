@@ -1,41 +1,34 @@
-vim.cmd('filetype plugin indent on')
-vim.o.shortmess = vim.o.shortmess .. 'c'
-vim.o.hidden = true
-vim.o.pumheight = 10
-vim.o.fileencoding = 'utf-8'
-vim.o.cmdheight = 1
-vim.o.splitbelow = true
-vim.o.splitright = true
+vim.opt.shortmess:append('c')
+vim.opt.pumheight = 10
+vim.opt.fileencoding = 'utf-8'
+vim.opt.cmdheight = 1
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 vim.opt.termguicolors = true
-vim.o.conceallevel = 0
-vim.o.showtabline = 2
-vim.o.showmode = false
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.updatetime = 300
-vim.o.timeoutlen = 100
-vim.o.clipboard = "unnamedplus"
-vim.o.hlsearch = false
-vim.o.ignorecase = true
-vim.o.scrolloff = 3
-vim.o.sidescrolloff = 10
-vim.o.mouse = "a"
-vim.wo.wrap = false
-vim.wo.number = true
--- vim.o.cursorline = true
-vim.wo.signcolumn = "yes"
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
-vim.o.autoindent = true
-vim.bo.autoindent = true
-vim.o.expandtab = true
-vim.bo.expandtab = true
+vim.opt.conceallevel = 0
+vim.opt.showtabline = 2
+vim.opt.showmode = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.updatetime = 300
+vim.opt.timeoutlen = 100
+vim.opt.clipboard = "unnamedplus"
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.scrolloff = 3
+vim.opt.sidescrolloff = 10
+vim.opt.mouse = "a"
+vim.opt.wrap = false
+vim.opt.number = true
+-- vim.opt.cursorline = true
+vim.opt.signcolumn = "yes"
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.autoindent = true
+vim.opt.expandtab = true
 
 -- Load the colorscheme
 vim.g.nord_borders = true
 vim.g.nord_italic = false
 require('nord').set()
-

@@ -14,5 +14,3 @@ require('dashboard-config')
 require('claudecode-config')
 require('mymodule')
 vim.cmd('colorscheme nord')
-vim.cmd('autocmd FileType cpp setlocal commentstring=//%s')
-

@@ -1,20 +1,24 @@
 vim.g.mapleader = ' '
-local map = vim.api.nvim_set_keymap
-map('n', '<C-h>', '<C-w>h', { noremap = true, silent = false })
-map('n', '<C-l>', '<C-w>l', { noremap = true, silent = false })
-map('n', '<C-j>', '<C-w>j', { noremap = true, silent = false })
-map('n', '<C-k>', '<C-w>k', { noremap = true, silent = false })
 
-map('t', '<C-h>', '<Cmd>wincmd h<CR>', { noremap = true, silent = false })
-map('t', '<C-l>', '<Cmd>wincmd l<CR>', { noremap = true, silent = false })
-map('t', '<C-j>', '<Cmd>wincmd j<CR>', { noremap = true, silent = false })
-map('t', '<C-k>', '<Cmd>wincmd k<CR>', { noremap = true, silent = false })
+-- Better window navigation
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
 
-map('i', 'kl', '<ESC>', { noremap = true, silent = false })
-map('v', 'kl', '<ESC>', { noremap = true, silent = false })
-map('t', '<ESC>', [[<C-\><C-n>]], { noremap = true, silent = false })
+vim.keymap.set('t', '<C-h>', '<cmd>wincmd h<CR>')
+vim.keymap.set('t', '<C-l>', '<cmd>wincmd l<CR>')
+vim.keymap.set('t', '<C-j>', '<cmd>wincmd j<CR>')
+vim.keymap.set('t', '<C-k>', '<cmd>wincmd k<CR>')
 
-map('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+-- Quick escape
+vim.keymap.set('i', 'kl', '<ESC>')
+vim.keymap.set('v', 'kl', '<ESC>')
+vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]])
 
-map('v', '<', '<gv', { noremap = true, silent = false })
-map('v', '>', '>gv', { noremap = true, silent = false })
+-- Toggle NvimTree
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { silent = true })
+
+-- Better indenting
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
