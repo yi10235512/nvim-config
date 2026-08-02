@@ -53,6 +53,11 @@ require("lazy").setup({
     'lewis6991/gitsigns.nvim',
     config = function() require('gitsigns-config') end,
   },
+  {
+    'sindrets/diffview.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function() require('diffview-config') end,
+  },
 
   'nvimdev/dashboard-nvim',
   'coder/claudecode.nvim',
