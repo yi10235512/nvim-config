@@ -1,5 +1,3 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- mason
 require("mason").setup {
   ui = {
@@ -9,23 +7,22 @@ require("mason").setup {
 }
 
 require("mason-lspconfig").setup {
-  ensure_installed = { 'volar', 'ts_ls' },
+  ensure_installed = { 'vue_ls', 'ts_ls' },
   automatic_enable = false,
 }
 
 local mason_registry = require('mason-registry')
-local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
+    '/node_modules/@vue/language-server'
 
--- html, css lsp
-require 'lspconfig'.html.setup {
-  capabilities = capabilities
-}
+-- Shared settings for every server (nvim-lspconfig only ships the defaults in
+-- `lsp/`, the wiring below is core `vim.lsp.config` / `vim.lsp.enable`).
+vim.lsp.config('*', {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
 
-require 'lspconfig'.cssls.setup {
-  capabilities = capabilities
-}
 -- typescript, javascript lsp
-require 'lspconfig'.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   -- Initial options for the TypeScript language server
   init_options = {
     plugins = {
@@ -50,26 +47,19 @@ require 'lspconfig'.ts_ls.setup {
     'typescriptreact', -- React files with TypeScript (.tsx)
     'vue' -- Vue.js single-file components (.vue)
   },
-}
-
-require'lspconfig'.volar.setup{}
-
--- python lsp
-require 'lspconfig'.pyright.setup {
-  capabilities = capabilities
-}
+})
 
 -- C, C++ lsp (clang)
-require 'lspconfig'.clangd.setup {
+vim.lsp.config('clangd', {
   cmd = { 'clangd',
     '--background-index',
     "--enable-config",
     "-log=verbose"
   }
-}
+})
 
 -- lua lsp
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = {
@@ -91,11 +81,32 @@ require 'lspconfig'.lua_ls.setup {
       },
     },
   },
-}
+})
 
--- DiagnosticSign styling
-local signs = { Error = " ", Warn = "󱝾 ", Hint = "󰌶 ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+-- html, css, python servers use the defaults shipped by nvim-lspconfig
+vim.lsp.enable({
+  'html',
+  'cssls',
+  'ts_ls',
+  'vue_ls',
+  'pyright',
+  'clangd',
+  'lua_ls',
+})
+
+-- Diagnostic styling
+vim.diagnostic.config {
+  underline = true,
+  virtual_text = {
+    spacing = 5,
+    severity = { min = vim.diagnostic.severity.WARN },
+  },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = "󱝾 ",
+      [vim.diagnostic.severity.HINT] = "󰌶 ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
+  },
+}

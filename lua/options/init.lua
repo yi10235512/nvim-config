@@ -27,6 +27,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.autoindent = true
 vim.opt.expandtab = true
+vim.opt.winborder = "rounded"
 
 -- Load the colorscheme
 vim.g.nord_borders = true
