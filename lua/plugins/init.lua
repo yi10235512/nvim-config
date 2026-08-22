@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   'shaunsingh/nord.nvim',
 
-  { 'nvim-treesitter/nvim-treesitter', branch = 'master', build = ":TSUpdate" },
+  { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ":TSUpdate" },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -28,12 +28,15 @@ require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
   'windwp/nvim-ts-autotag',
-  'windwp/nvim-autopairs',
+  { 'windwp/nvim-autopairs', config = true },
   'folke/which-key.nvim',
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    tag = 'v0.2.1',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    },
   },
   { "akinsho/toggleterm.nvim", version = '^2.0.0', config = function() require('toggleterm-config') end },
 

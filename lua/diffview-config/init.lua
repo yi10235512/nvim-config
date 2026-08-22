@@ -22,7 +22,7 @@ local M = {}
 
 -- Diff the current branch against the merge base with the default branch.
 function M.open_default_branch()
-  local git = require('mymodule/git')
+  local git = require('modules/git')
 
   if not git.is_work_tree() then
     vim.notify('Diffview: not inside a git work tree', vim.log.levels.WARN)

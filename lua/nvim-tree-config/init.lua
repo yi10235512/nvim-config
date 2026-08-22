@@ -9,12 +9,7 @@ local function my_on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
-  vim.keymap.set('n', 'u',   api.node.navigate.parent, opts('Go to Parent Folder'))
-  vim.keymap.set('n', 'A',   api.fs.create,            opts('Create file/folder'))
-  vim.keymap.set('n', 'D',   api.fs.trash,             opts('Trash'))
   vim.keymap.set('n', '?',   api.tree.toggle_help,     opts('Help'))
-  vim.keymap.set('n', '1g',  api.tree.toggle_gitignore_filter, opts('Toggle Git Ignore'))
-  vim.keymap.set('n', '1c',  api.tree.collapse_all,    opts('Collapse All'))
 end
 
 require("nvim-tree").setup {
@@ -23,6 +18,10 @@ require("nvim-tree").setup {
   hijack_cursor = true,
   view = {
     adaptive_size = true,
+  },
+  update_focused_file = {
+    enable = true,
+    update_root = true,
   },
   filters = {
     dotfiles = true,

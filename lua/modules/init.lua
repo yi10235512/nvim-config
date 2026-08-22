@@ -1,5 +1,5 @@
-local hello = require("mymodule/helloworld")
-local session_manager = require("mymodule/session-manager")
+local hello = require("modules/helloworld")
+local session_manager = require("modules/session-manager")
 
 function moduleSayHello()
   hello.sayhello()

@@ -1,6 +1,13 @@
 vim.opt.termguicolors = true
-require("bufferline").setup{}
-vim.cmd[[
-  nnoremap <silent>[b :BufferLineCycleNext<CR>
-  nnoremap <silent>]b :BufferLineCyclePrev<CR>
-]]
+require("bufferline").setup {
+  options = {
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "File Explorer",
+        highlight = "Directory",
+        separator = true
+      }
+    }
+  }
+}

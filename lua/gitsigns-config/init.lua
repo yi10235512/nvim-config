@@ -10,7 +10,7 @@ local M = {}
 -- index, so that in-buffer hunks line up with what `:DiffviewOpenDefault` shows.
 -- Applied globally (all buffers) to keep both views on the same base.
 function M.base_default_branch()
-  local git = require('mymodule/git')
+  local git = require('modules/git')
 
   if not git.is_work_tree() then
     vim.notify('Gitsigns: not inside a git work tree', vim.log.levels.WARN)
